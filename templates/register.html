@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Registration</title>
+    <style>
+        form{
+        max-width: 1000px;
+        padding-left: 400px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+ <header class="row">
+       <div class="col-md-12">
+       <nav class="navbar navbar-expand-lg navbar-light bg-info">
+          <a class="navbar-brand" href="/">Furnitures</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/view">View</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html#">About</a>
+              </li>
+
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html#">Book</a>
+              </li>
+
+            </ul>
+            <form class="form-inline">
+              <input class="form-control" placeholder="Search" aria-label="Search" type="text">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+        </div>
+     </header>
+<form class="form-group" action="/register" name="register" method="post" onsubmit="return validateForm()">
+			<label >Username:</label><input class="form-control" type="text" name="username" placeholder="User name">
+			<label >Email:</label><input class="form-control" type="email" name="email" placeholder="Pleas add your email">
+			<label>Phone Number:</label><input class="form-control" type="tel" name="phone" placeholder="Input your phone number">
+			<label>ID Number:</label><input class="form-control" type="number" name="id_no" placeholder="Add your id number">
+			<label >Password:</label><input class="form-control" type="password" name="password" placeholder="Add your password">
+			<div class="custom-control custom-radio" style="padding:50px;">
+            <label >Gender:</label><br>
+			<input  type="radio" name="gender" value="Male" ><label >Male</label><br>
+			<input type="radio" name="gender" value="Female"><label  >Female</label><br>
+			<input  type="radio" name="gender" value="Others"><label >Others</label><br>
+            </div>
+			<label >Country:</label>
+			<select class="form-control" name="country">
+				<option value="kenya">Kenya</option>
+				<option value="uganda">Uganda</option>
+				<option value="tanzania">Tanzania</option>
+				<option value="Rwanda">Rwanda</option>
+			</select><br>
+
+			<input  type="submit" name="submit">
+			<input type="reset" name="reset">
+
+		</form>
+	</fieldset>
+
+</body>
+<script>
+function  validateForm(){
+    var x = document.forms["register"]["username"].value;
+    if(x == ""){
+    alert("Please input your username");
+    return false;
+}
+
+}
+</script>
+
+</html>

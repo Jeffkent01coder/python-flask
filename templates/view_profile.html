@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+</head>
+<body>
+ <header class="row">
+       <div class="col-md-12">
+       <nav class="navbar navbar-expand-lg navbar-light bg-info">
+          <a class="navbar-brand" href="/">Furnitures</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/view_profile">View Profile</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/view">View</a>
+              </li>
+
+
+
+            </ul>
+
+            <form class="form-inline">
+              <input class="form-control" placeholder="Search" aria-label="Search" type="text">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+        </div>
+     </header>
+ {% block content%}
+
+     <input type="text" value="{{result[3]}}" hidden>
+
+<h3 class="alert-warning">{{msg}}</h3>
+<table>
+    <tr>
+        <td>Username</td>
+        <td>{{result[0]}}</td>
+    </tr>
+</table>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User login</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <style>
+        form{
+        max-width: 1000px;
+        padding-left: 400px;
+        }
+    </style>
+</head>
+<body>
+<header class="row">
+       <div class="col-md-12">
+       <nav class="navbar navbar-expand-lg navbar-light bg-info">
+          <a class="navbar-brand" href="/">Furnitures</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register Product</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/view">View</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html#">About</a>
+              </li>
+
+               <li class="nav-item">
+                  <a class="nav-link" href="/login">login</a>
+              </li>
+
+            </ul>
+            <h3 class="alert-warning">{{msg}}</h3>
+            <form class="form-inline">
+              <input class="form-control" placeholder="Search" aria-label="Search" type="text">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+        </div>
+     </header>
+<form class="form-group" action="/login" name="login" method="post" onsubmit="return validateForm()">
+			<label >Username:</label><input class="form-control" type="text" id="username" name="username" placeholder="Enter your username">
+			<label >Password:</label><input class="form-control" type="password" id="password" name="password" placeholder="Pleas Enter your password">
+
+            <input  type="submit" name="login" value="Login"><br>
+            <a href="/register">Click this link to register</a>
+</form>
+
+
+</body>
+<script>
+function  validateForm(){
+    var x = document.forms["login"]["username"]["password"].value;
+    if(x == ""){
+    alert("Please input your username/password");
+    return false;
+}
+
+}
+</script>
+</html>
